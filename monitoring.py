@@ -6,12 +6,10 @@ from os import path
 from config import read_ini_file
 
 
-
-
-
-class MonitoringRemzona:
+class Monitoring:
 
     URL = read_ini_file()['url']
+
     def __init__(self):
         self.pool = []
         self.counter = 0
@@ -149,7 +147,7 @@ class MonitoringRemzona:
             self.average_response_time.append(r.elapsed.total_seconds())
             response_time = r.elapsed.total_seconds()
 
-        except Exception:
+        except Exception as ex_:
             r = None
 
         if not self.server_fall:

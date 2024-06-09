@@ -7,7 +7,7 @@ from aiogram.dispatcher.filters.state import StatesGroup, State
 import aioschedule
 from messages import messages as mes
 from config import read_ini_file
-from custom_classes import MonitoringRemzona
+from monitoring import Monitoring
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import emoji
 from mail import CheckMail
@@ -26,7 +26,7 @@ storage = MemoryStorage()
 data_base = Database()
 bot = Bot(token=BOT_TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
-monitoring = MonitoringRemzona()
+monitoring = Monitoring()
 id_messages_callback = {}  # глобальная переменная key = user_id: val = id_messages
 
 inline_btn_1 = InlineKeyboardButton('Я решу эту проблему', callback_data='button1')
