@@ -131,7 +131,7 @@ async def send_notification_to_users(arg=None):
         for user in users:
             for message in mail_messages:
                 await bot.send_message(chat_id=user, text=message)
-                
+
 
 @dp.callback_query_handler(lambda c: c.data == 'button1')
 async def process_callback_button1(callback_query: types.CallbackQuery):
