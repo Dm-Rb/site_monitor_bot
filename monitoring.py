@@ -1,3 +1,5 @@
+import os.path
+
 import requests
 from datetime import datetime
 import emoji
@@ -17,6 +19,8 @@ class Monitoring:
         self.average_response_time = []
         self.assignee_id = 0
         self.assignee_message = False
+        if not os.path.exists(os.path.join('.', 'tmp')):
+            os.mkdir(os.path.join('.', 'tmp'))
 
     def get_average_response_time(self):
         if len(self.average_response_time) >= 5:
